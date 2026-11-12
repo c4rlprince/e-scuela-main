@@ -1,0 +1,463 @@
+/* ==========================================================
+   FACULTY PORTAL STYLES
+   ========================================================== */
+
+/* Welcome Banner */
+.faculty-welcome {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 24px -4px rgba(89, 4, 7, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.faculty-welcome h2 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.faculty-welcome p {
+  margin: 0;
+  font-size: 13.5px;
+  opacity: 0.9;
+}
+
+/* Class Cards Grid */
+.faculty-classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.faculty-class-card {
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--primary);
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.faculty-class-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.fac-class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Schedule & Notices on Dashboard */
+.fac-schedule-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fac-schedule-item:last-child {
+  border-bottom: none;
+}
+
+.fac-sched-time {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.fac-sched-title {
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+.fac-notice-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.fac-notice-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.fac-notice-head strong {
+  font-size: 13.5px;
+  color: var(--primary-dark);
+}
+
+.fac-notice-card p {
+  margin: 0 0 6px 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.fac-notice-card small {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* Mode Toggle Bar (Constrained on Desktop, 100% on Mobile) */
+.fac-att-mode-toggle,
+.field .fac-att-btn-group {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  background: #edf2f7 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  padding: 3px !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  box-sizing: border-box !important;
+  gap: 4px !important;
+  margin-top: 4px !important;
+}
+
+#facAttModeDailyBtn,
+#facAttModeMonthlyBtn {
+  height: 38px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 7px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  transition: all var(--trans-fast) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+}
+
+#facAttModeDailyBtn.active,
+#facAttModeMonthlyBtn.active {
+  background: #2e7d32 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.35) !important;
+}
+
+/* Attendance Sub-header Action Bar */
+.attendance-subbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.attendance-subbar span {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Attendance Buttons Group */
+.fac-att-btn-group {
+  display: inline-flex;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.fac-att-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #64748b;
+  transition: all var(--trans-fast);
+}
+
+.fac-att-btn.active.present {
+  background: #2e7d32;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(46, 125, 50, 0.35);
+}
+
+.fac-att-btn.active.late {
+  background: #b26a00;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(178, 106, 0, 0.35);
+}
+
+.fac-att-btn.active.absent {
+  background: #b91c1c;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.35);
+}
+
+.fac-att-btn.active.excused {
+  background: #475569;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(71, 85, 105, 0.35);
+}
+
+/* Announcement Feed */
+.fac-notice-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.fac-notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* ==========================================================
+   DROPDOWNS & INPUT FORM CONTROLS (DESKTOP CONSTRAINED)
+   ========================================================== */
+#facultyGrades .field,
+#facultyAttendance .field {
+  max-width: 420px;
+}
+
+#facGradeClassSelect,
+#facAttClassSelect,
+#facAttDate {
+  width: 100% !important;
+  max-width: 420px !important;
+  min-width: 0 !important;
+  height: 44px !important;
+  padding: 10px 34px 10px 14px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid var(--border) !important;
+  background-color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  line-height: normal !important;
+}
+
+#facGradeClassSelect:focus,
+#facAttClassSelect:focus,
+#facAttDate:focus {
+  border-color: var(--primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(125, 9, 15, 0.12) !important;
+}
+
+select option,
+#facGradeClassSelect option,
+#facAttClassSelect option {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 10px 12px !important;
+  background-color: #ffffff !important;
+  color: var(--text-main) !important;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVENESS & OVERFLOW CONTAINMENT (≤ 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+  #facultyGrades,
+  #facultyAttendance {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #facultyGrades .panel,
+  #facultyAttendance .panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 18px 14px !important;
+    margin-bottom: 14px !important;
+    border-radius: 14px !important;
+    overflow-x: hidden !important;
+  }
+
+  #facultyGrades .field,
+  #facultyAttendance .field {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #facGradeClassSelect,
+  #facAttClassSelect,
+  #facAttDate,
+  .fac-att-mode-toggle,
+  .field .fac-att-btn-group {
+    max-width: 100% !important;
+  }
+
+  .field label {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  .attendance-subbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+
+  .attendance-subbar button {
+    width: 100% !important;
+    min-height: 38px !important;
+  }
+
+  /* Grades Entry Touch-Scroll Table */
+  #facultyGrades .table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    margin-top: 10px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  #facultyGrades table {
+    width: 100% !important;
+    min-width: 530px !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+  }
+
+  #facultyGrades table th,
+  #facultyGrades table td {
+    padding: 6px 4px !important;
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+  }
+
+  #facultyGrades table th:nth-child(1),
+  #facultyGrades table td:nth-child(1) {
+    width: 32px !important;
+    min-width: 32px !important;
+    text-align: center !important;
+  }
+
+  #facultyGrades table th:nth-child(2),
+  #facultyGrades table td:nth-child(2) {
+    min-width: 130px !important;
+    text-align: left !important;
+  }
+
+  #facultyGrades .grade-input {
+    width: 40px !important;
+    height: 32px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Attendance Touch-Scroll Table */
+  #facultyAttendance .table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    margin-top: 10px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  #facultyAttendance table {
+    width: 100% !important;
+    min-width: 520px !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+  }
+
+  #facultyAttendance table th,
+  #facultyAttendance table td {
+    padding: 8px 6px !important;
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+  }
+
+  #facultyAttendance table th:nth-child(1),
+  #facultyAttendance table td:nth-child(1) {
+    width: 32px !important;
+    min-width: 32px !important;
+    text-align: center !important;
+  }
+
+  #facultyAttendance table th:nth-child(2),
+  #facultyAttendance table td:nth-child(2) {
+    min-width: 130px !important;
+    text-align: left !important;
+  }
+
+  #facultyAttendance table th:nth-child(3),
+  #facultyAttendance table td:nth-child(3) {
+    min-width: 80px !important;
+    text-align: center !important;
+  }
+
+  #facultyAttendance table th:nth-child(4),
+  #facultyAttendance table td:nth-child(4) {
+    min-width: 220px !important;
+    text-align: center !important;
+  }
+
+  td .fac-att-btn-group {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+    gap: 3px !important;
+    padding: 2px !important;
+  }
+
+  td .fac-att-btn {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  .fac-notice-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
